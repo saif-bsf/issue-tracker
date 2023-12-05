@@ -19,7 +19,7 @@ export async function PATCH(
 
   const updatedIssue = await prisma.issue.update({
     where: { id: parseInt(params.id) },
-    data: { title: body.tile, description: body.description },
+    data: { title: body.title, description: body.description },
   });
 
   return NextResponse.json(updatedIssue);
